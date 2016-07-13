@@ -224,6 +224,44 @@ public class MainPanel extends JPanel {
 		System.out.println(numRuns);
     }
 
+
+//	public void runContinuous() {
+//		_running = true;
+//		int numRuns=0;
+//		while (_running) {
+//			System.out.println("Running...");
+//			int origR = _r;
+//			try {
+//				Thread.sleep(20);
+//			} catch (InterruptedException iex) { }
+//			for (int j=0; j < _maxCount; j++) {
+//				_r += (j % _size) % _maxCount;
+//				_r += _maxCount;
+//			}
+//			_r = origR;
+//			backup();
+//			calculateNextIteration();
+//			numRuns++;
+//		}
+//		System.out.println(numRuns);
+//	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Stop a continuously running system.
      */
