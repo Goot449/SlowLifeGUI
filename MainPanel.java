@@ -215,11 +215,13 @@ public class MainPanel extends JPanel {
 
     public void runContinuous() {
 	_running = true;
+	int numRuns=0;
 	while (_running) {
-	    System.out.println("Running...");
 	    backup();
 	    calculateNextIteration();
+		numRuns++;
 	}
+		System.out.println(numRuns);
     }
 
     /**
