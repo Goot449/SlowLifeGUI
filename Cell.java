@@ -5,6 +5,7 @@ import java.awt.event.*;
 public class Cell extends JButton {
 
     private boolean _beenAlive = false;
+    private boolean _isAlive = false;
 
     private int _maxSize = 10000;
     
@@ -31,21 +32,15 @@ public class Cell extends JButton {
     }
     
     public boolean getAlive() {
-	String text = getText();
-	return (text.equals("X"));
+		return _isAlive;
     }
 
     public String toString() {
-	String toReturn = new String("");
-	String currentState = getText();
-	for (int j = 0; j < _maxSize; j++) {
-	    toReturn += currentState;
-	}
-	if (toReturn.substring(0,1).equals("X")) {
-	    return toReturn.substring(0,1);
-	} else {
-	    return ".";
-	}
+		if (_isAlive) {
+			return "X";
+		} else {
+			return ".";
+		}
 
     }
     
@@ -54,10 +49,12 @@ public class Cell extends JButton {
 	// really say the same thing!
 	if (a) {
 	    _beenAlive = true;
+		_isAlive = true;
 	    setText("X");
 	    setBackground(Color.RED);
 	} else {
 	    setText(" ");
+		_isAlive = false;
 	    if (_beenAlive) {
 		setBackground(Color.GREEN);
 	    } else {
